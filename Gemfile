@@ -53,7 +53,11 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+
 # Front-end framework (Bootstrap)
 gem 'bootstrap', '~> 4.1.3'
 # Bootstrap Javascript depends on jQuery... added jquery rails gem too
 gem 'jquery-rails'
+# Adding Rubocop for Ruby syntax linting
+gem 'rubocop-rails_config'
+
