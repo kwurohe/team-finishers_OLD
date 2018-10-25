@@ -54,9 +54,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-<<<<<<< HEAD
 gem 'devise'
-=======
 
 
 # Front-end framework (Bootstrap)
@@ -66,4 +64,4 @@ gem 'jquery-rails'
 # Adding Rubocop for Ruby syntax linting
 gem 'rubocop-rails_config'
 
->>>>>>> master
+
