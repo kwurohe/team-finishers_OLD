@@ -39,6 +39,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'rspec-rails', '~> 3.5'
 end
 
 group :development do
@@ -52,4 +53,16 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+<<<<<<< HEAD
 gem 'devise'
+=======
+
+
+# Front-end framework (Bootstrap)
+gem 'bootstrap', '~> 4.1.3'
+# Bootstrap Javascript depends on jQuery... added jquery rails gem too
+gem 'jquery-rails'
+# Adding Rubocop for Ruby syntax linting
+gem 'rubocop-rails_config'
+
+>>>>>>> master
