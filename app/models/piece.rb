@@ -15,9 +15,12 @@ class Piece < ApplicationRecord
       return true
     end
 
-    # TODO: Build special condition for Knight that always returns true
+    # Special condition for Knight that always returns false
+    if piece.instance_of?(Knight) 
+    	return false
+    end
 
-    # Testing if move is not on a diagonal, horizontal, or vertical, i.e. not a valid move
+    # Testing if move is not on a diagonal, horizontal, or vertical, i.e. not a straight-line move
     if piece.current_column - column).abs != (piece.current_row - row).abs #diagonal test
     	if piece.current_column - column != 0 && piece.current_row != current_row #horizontal test
     		if piece.current_row - row != 0 && piece.current_column != current_column #vertical test
