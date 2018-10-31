@@ -4,8 +4,8 @@ class Game < ApplicationRecord
   has_many :pieces
   has_many :moves
 
-  def piece_present?(x_pos, y_pos)
-    pieces.where(x_pos: x_pos, y_pos: y_pos)
+  def piece_present(x_pos, y_pos)
+    pieces.where(x_pos: x_pos, y_pos: y_pos).first
   end
 
 end
