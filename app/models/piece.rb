@@ -13,7 +13,7 @@ class Piece < ApplicationRecord
     end
 
     #build an array of all the pieces in the current game
-    pieces = piece.game.pieces
+    pieces = game.pieces
 
     #use the pieces array to build an array of all the occupied spaces in the game
     occupied_spaces = []
