@@ -17,6 +17,15 @@ class Piece < ApplicationRecord
 
     # TODO: Build special condition for Knight that always returns true
 
+    # Testing if move is not on a diagonal, horizontal, or vertical, i.e. not a valid move
+    if piece.current_column - column).abs != (piece.current_row - row).abs #diagonal test
+    	if piece.current_column - column != 0 && piece.current_row != current_row #horizontal test
+    		if piece.current_row - row != 0 && piece.current_column != current_column #vertical test
+    			return true
+    		end
+    	end
+    end
+
     # Build an array of all the pieces in the current game
     pieces = game.pieces
 
