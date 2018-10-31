@@ -27,23 +27,24 @@ class Piece < ApplicationRecord
     # horizontal case
     if move_direction == :horizontal
       obstructors = pieces_in_row.where('x_new > ? AND x_new < ?', [x_pos, x_new].min, [x_pos, x_new].max)
-      return false if obstructors.nil?
+      return false if obstructors.empty?
     # vertical case
-    elsif move_direction == :vertical
+    elsif move_direction == :vertical   
       obstructors = pieces_in_column.where('y_new > ? AND y_new < ?', [y_pos, y_new].min, [y_pos, y_new].max)
-      return false if obstructors.nil?
+      return false if obstructors.empty?
     # diagonal case
     elsif move_direction == :diagonal
-      obstructors = []
       (x_pos..x_new).each do |x|
         next if x == x_pos
-        break if x == x_new
+          return false if x == x_new
         (y_pos..y_new).each do |y|
-        next if y == y_pos
-        break if y == y_new
-          return false if game.pieces.where(x_pos: x, y_pos: y) 
+          next if y == y_pos
+            return true if game.pieces.where(x_pos: x, y_pos: y).size == 2 
+          end
         end
       end
-    true
+    elsif move_direction == :invalid
+      raise "Invalid move"
+    end
   end
 end
