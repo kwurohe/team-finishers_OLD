@@ -27,15 +27,15 @@ class Piece < ApplicationRecord
     current_row = piece.row
 
     while current_column != column && current_row != row
-        if (current_column - column < 0)
+        if current_column - column < 0
           current_column += 1 #move right
-        elsif (current_column - column > 0)
+        elsif current_column - column > 0
           current_column -= 1  #move left
         end
 
-        if (current_row - row < 0)
+        if current_row - row < 0
           current_row += 1  #move up
-        elsif (current_row - row > 0)
+        elsif current_row - row > 0
           current_row -= 1 #move down
         end
 
