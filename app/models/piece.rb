@@ -21,7 +21,7 @@ class Piece < ApplicationRecord
     end
 
     # Testing if move is not on a diagonal, horizontal, or vertical, i.e. not a straight-line move
-    if piece.current_column - column).abs != (piece.current_row - row).abs #diagonal test
+    if (piece.current_column - column).abs != (piece.current_row - row).abs #diagonal test
     	if piece.current_column - column != 0 && piece.current_row != current_row #horizontal test
     		if piece.current_row - row != 0 && piece.current_column != current_column #vertical test
     			return true
