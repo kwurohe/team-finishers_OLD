@@ -1,1 +1,21 @@
 @import "bootstrap";
+
+.gameBoard {
+  padding: 20px;
+  border-style: solid;
+  margin: auto;
+}
+
+.whiteSquare {
+  background-color: white;
+  height: 50px;
+  width: 50px;
+  border-style: solid;
+}
+
+.blackSquare {
+  background-color: black;
+  height: 50px;
+  width: 50px;
+  border-style: solid;
+}
