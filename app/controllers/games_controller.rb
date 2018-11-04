@@ -5,7 +5,7 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game = Game.create(game_params[:id])
+    @game = Game.create(game_params)
     redirect_to game_path(@game)
   end
 
@@ -19,6 +19,7 @@ class GamesController < ApplicationController
   private 
 
   def game_params
-    params.require(:game).permit(:black_player_user_id, :white_player_user_id, :turn_user_id, :game_id)
+    params.require(:game).
+      permit(:black_player_user_id, :white_player_user_id, :turn_user_id, :game_id)
   end
 end

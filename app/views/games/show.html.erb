@@ -7,10 +7,17 @@
       <% 8.times do |row| %>
         <tr>
           <% 8.times do |col|%>
+
+            <% pieces = @game.pieces.
+              where(
+              current_row: row, 
+              current_column: col 
+              ) %>
+
             <% if (row+col) % 2 == 0 %>
-              <td class="whiteSquare"></td>
+              <td class="whiteSquare"><%= pieces.map { |p| [p.color ? 'White' : 'Black', p.type] } %></td>
             <% else %>
-              <td class="blackSquare"></td>
+              <td class="blackSquare"><%= pieces.map { |p| [p.color ? 'White' : 'Black', p.type] } %></td>
             <% end %>        
           <% end %>
         </tr>
@@ -18,6 +25,3 @@
     </tbody>
   </table>
 </div>
-
-          
-
