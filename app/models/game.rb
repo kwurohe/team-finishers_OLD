@@ -18,65 +18,65 @@ def create_white_pieces
     Pawn.create(
       :user_id => white_player_user_id,
       :game_id => self.id,
-      :current_row => 1,
-      :current_column => i,
+      :x_pos => 1,
+      :y_pos => i,
       :color => true
     )
   end
   Rook.create(
     :user_id => white_player_user_id,
     :game_id => self.id,
-    :current_row => 0,
-    :current_column => 0,
+    :x_pos => 0,
+    :y_pos => 0,
     :color => true
   )
   Rook.create(
     :user_id => white_player_user_id,
     :game_id => self.id,
-    :current_row => 0,
-    :current_column => 7,
+    :x_pos => 0,
+    :y_pos => 7,
     :color => true
   )
   Knight.create(
     :user_id => white_player_user_id,
     :game_id => self.id,
-    :current_row => 0,
-    :current_column => 1,
+    :x_pos => 0,
+    :y_pos => 1,
     :color => true
   )
   Knight.create(
     :user_id => white_player_user_id,
     :game_id => self.id,
-    :current_row => 0,
-    :current_column => 6,
+    :x_pos => 0,
+    :y_pos => 6,
     :color => true
   )
   Bishop.create(
     :user_id => white_player_user_id,
     :game_id => self.id,
-    :current_row => 0,
-    :current_column => 2,
+    :x_pos => 0,
+    :y_pos => 2,
     :color => true
   )
   Bishop.create(
     :user_id => white_player_user_id,
     :game_id => self.id,
-    :current_row => 0,
-    :current_column => 5,
+    :x_pos => 0,
+    :y_pos => 5,
     :color => true
   )
   Queen.create(
     :user_id => white_player_user_id,
     :game_id => self.id,
-    :current_row => 0,
-    :current_column => 3,
+    :x_pos => 0,
+    :y_pos => 3,
     :color => true
   )
   King.create(
     :user_id => white_player_user_id,
     :game_id => self.id,
-    :current_row => 0,
-    :current_column => 4,
+    :x_pos => 0,
+    :y_pos => 4,
     :color => true
   )
 end
@@ -87,65 +87,65 @@ def create_black_pieces
     Pawn.create(
       :user_id => black_player_user_id,
       :game_id => self.id,
-      :current_row => 6,
-      :current_column => y,
+      :x_pos => 6,
+      :y_pos => y,
       :color => false
     )
   end
   Rook.create(
     :user_id => black_player_user_id,
     :game_id => self.id,
-    :current_row => 7,
-    :current_column => 0,
+    :x_pos => 7,
+    :y_pos => 0,
     :color => false
   )
   Rook.create(
     :user_id => black_player_user_id,
     :game_id => self.id,
-    :current_row => 7,
-    :current_column => 7,
+    :x_pos => 7,
+    :y_pos => 7,
     :color => false
   )
   Knight.create(
     :user_id => black_player_user_id,
     :game_id => self.id,
-    :current_row => 7,
-    :current_column => 1,
+    :x_pos => 7,
+    :y_pos => 1,
     :color => false
   )
   Knight.create(
     :user_id => black_player_user_id,
     :game_id => self.id,
-    :current_row => 7,
-    :current_column => 6,
+    :x_pos => 7,
+    :y_pos => 6,
     :color => false
   )
   Bishop.create(
     :user_id => black_player_user_id,
     :game_id => self.id,
-    :current_row => 7,
-    :current_column => 2,
+    :x_pos => 7,
+    :y_pos => 2,
     :color => false
   )
   Bishop.create(
     :user_id => black_player_user_id,
     :game_id => self.id,
-    :current_row => 7,
-    :current_column => 5,
+    :x_pos => 7,
+    :y_pos => 5,
     :color => false
   )
   Queen.create(
     :user_id => black_player_user_id,
     :game_id => self.id,
-    :current_row => 7,
-    :current_column => 3,
+    :x_pos => 7,
+    :y_pos => 3,
     :color => false
   )
   King.create(
     :user_id => black_player_user_id,
     :game_id => self.id,
-    :current_row => 7,
-    :current_column => 4,
+    :x_pos => 7,
+    :y_pos => 4,
     :color => false
   )
 end

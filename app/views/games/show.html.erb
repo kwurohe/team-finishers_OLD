@@ -10,8 +10,8 @@
 
             <% pieces = @game.pieces.
               where(
-              current_row: row, 
-              current_column: col 
+              x_pos: row, 
+              y_pos: col 
               ) %>
 
             <% if (row+col) % 2 == 0 %>
