@@ -149,6 +149,9 @@ def create_black_pieces
     :color => false
   )
 end
-
-
+  
+  def piece_present(x_pos, y_pos)
+    pieces.where(x_pos: x_pos, y_pos: y_pos).first
+  end
+  
 end
