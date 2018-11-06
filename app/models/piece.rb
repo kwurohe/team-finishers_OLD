@@ -45,7 +45,7 @@ class Piece < ApplicationRecord
   # move_to! method calls valid_move? and will update a piece instance's
   # position and/or capture by setting positions to null. Could update
   # this later to incorporate a piece status
-
+  
   def move_to!(x_new, y_new)
     return raise "Invalid move" if !valid_move?(x_new, y_new)
     occupant = game.piece_present(x_new, y_new)
