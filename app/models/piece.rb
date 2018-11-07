@@ -41,4 +41,21 @@ class Piece < ApplicationRecord
     end
     raise "Invalid move" if move_direction == :invalid
   end
+
+  # move_to! method calls valid_move? and will update a piece instance's
+  # position and/or capture by setting positions to null. Could update
+  # this later to incorporate a piece status
+  
+  def move_to!(x_new, y_new)
+    return raise "Invalid move" if !valid_move?(x_new, y_new)
+    occupant = game.piece_present(x_new, y_new)
+    current_piece = game.pieces.where(x_pos: x_pos, y_pos: y_pos).first
+    if occupant.nil?
+      current_piece.update_attributes(x_pos: x_new, y_pos: y_new)
+    elsif occupant.color != current_piece.color
+      current_piece.update_attributes(x_pos: x_new, y_pos: y_new)
+      occupant.update_attributes(x_pos: nil, y_pos: nil)
+    else return raise "Invalid move"
+    end
+  end
 end
