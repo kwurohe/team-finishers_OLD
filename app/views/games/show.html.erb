@@ -15,9 +15,9 @@
               ) %>
 
             <% if (row+col) % 2 == 0 %>
-              <td class="whiteSquare"><%= pieces.map { |p| [p.color ? 'White' : 'Black', p.type] } %></td>
+              <td class="whiteSquare"> <%= pieces.map { |p| [p.color ? 'White' : 'Black', p.type] } %> </td>
             <% else %>
-              <td class="blackSquare"><%= pieces.map { |p| [p.color ? 'White' : 'Black', p.type] } %></td>
+              <td class="blackSquare"> <%= pieces.map { |p| [p.color ? 'White' : 'Black', p.type] } %> </td>
             <% end %>        
           <% end %>
         </tr>
