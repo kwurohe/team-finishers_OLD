@@ -8,7 +8,7 @@
 
 <h2> Available Games: </h2>
 <% @games.each do |game| %>
-	<% if game.white_player_user_id == nil || game.black_player_user_id == nil %>
+	<% if game.white_player_user_id.nil? || game.black_player_user_id.nil? %>
 		<ul>
 			<li> <%= link_to "Game #{game.id}", game_path(game) %> </li>
 		</ul>
