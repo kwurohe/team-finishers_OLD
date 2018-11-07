@@ -4,19 +4,20 @@ class Piece < ApplicationRecord
   has_many :moves
 
   def valid_move?(x_new, y_new)
+    return false if move_type(x_new, y_new) == :invalid
     true
   end
-  
+
   # returns the distance between the input 
   # x position and the current x position
   # in order to check for valid move distance
   def x_diff(x)
-    return (x - x_pos).abs
+    (x - x_pos).abs
   end
   
-  # same as above but for y position  
+  # same as above but for y position
   def y_diff(y)
-    return (y - y_pos).abs
+    (y - y_pos).abs
   end
 
   def move_type(x_new, y_new)
